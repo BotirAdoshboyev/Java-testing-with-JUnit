@@ -2,7 +2,6 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvFileSource;
-import org.junit.jupiter.params.provider.CsvSource;
 import org.junit.jupiter.params.provider.ValueSource;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -20,7 +19,7 @@ public class BankAccountParameterizedTest {
 
     @ParameterizedTest
 //    @CsvSource({"Botir, 100", "Jasur, 200", "Diyor, 300"})
-    @CsvFileSource(resources = "AccountDetails.csv")
+    @CsvFileSource(resources = "accountDetails.csv")
     @DisplayName("Holder name and deposit successful")
     public void testDepositAndHolderName(String holderName, int amount, BankAccount account) {
         account.deposit(amount);
